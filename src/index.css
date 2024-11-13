@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@keyframes floatBalloons {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-balloons::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  animation: floatBalloons 4s ease-in-out infinite;
+  animation-delay: 0s;
+  opacity: 0.6;
+}
+
+.floating-balloons::after {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 60%;
+  width: 25px;
+  height: 25px;
+  background-color: #ff6f61;
+  border-radius: 50%;
+  animation: floatBalloons 3.5s ease-in-out infinite;
+  animation-delay: 1s;
+  opacity: 0.6;
+}
+
+.floating-balloons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
